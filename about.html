@@ -1,0 +1,128 @@
+---
+layout: page
+title: "About"
+description: "一点人生的...经验"
+header-img: "img/post-bg-2015.jpg"
+---
+
+
+<!-- Chinese Version -->
+<div>
+    <blockquote>
+        <del>我作为一个长者，有必要告诉你们一点人生的……</del>
+    </blockquote>
+    如果你能看到这里，恭喜你，我也不能把你怎么样，也给不了你什么，甚至都找不到一张比较好看的背景图（除了首页的Violet！）。
+    <br /><br />
+    不想扯什么高深的东西，也没什么好说的，谈谈人生的经验吧。
+    <br /><br />
+    我的人生现在过了可能1/3，也可能是1/4或者1/5，甚至19/20。其实也没什么好说的，对吧，都是些小毛孩子。既然这样，就扯扯20岁<del>（其实是19岁）</del>的人生观吧。
+    <br /><br />
+    行走十余年，深刻感觉到了学习的重要性，这点不可否认。学习的重要性就不用我再多加强调，懂得自然会懂，不懂的我说了也没用。
+    <br /><br />
+    我想说的是，人活着啊，一定要对自己好一点。学习固然重要，但是为了学习而抛弃自己的身体那就不太对了。有什么能满足自己的尽量满足，当然是满足不是放纵。在满足的基础上再去做自己要做的，工作或者学习，这才是正道。
+    <br /><br />
+    从前我不懂这些，拼了命的学习，然后一步步把自己的身心折腾得伤痕累累。
+    <br /><br />
+    在这里立个flag吧，以后对自己好一点。想吃的就去吃，想买的就去买，生病了就去医院，在经济条件能满足的情况下尽量满足。
+    <br /><br />
+    或许我这么说大部分人都不会感受到什么，就当看个戏吧。从前我做了很多不正确的事，希望这样能勉强挽救一下。
+    <br /><br />
+    放个最近比较喜欢的歌，只放歌词好了。这个页面是HTML写的，插入一个播放器还是没问题的，但是我想安静一点。
+    <br /><br />
+    一首比较烂大街的歌，毛不易《消愁》。可能很多人都在强说愁，但是我特别想知道，这首歌的作者毛不易还这么年轻，是怎样写出这样一首歌的。
+    <blockquote>
+当你走进这欢乐场<br />
+背上所有的梦与想<br />
+各色的脸上各色的妆<br />
+没人记得你的模样<br />
+三巡酒过你在角落<br />
+固执的唱着苦涩的歌<br />
+听他在喧嚣里被淹没<br />
+你拿起酒杯对自己说<br />
+一杯敬朝阳 一杯敬月光<br />
+唤醒我的向往 温柔了寒窗<br />
+于是可以不回头地逆风飞翔<br />
+不怕心头有雨 眼底有霜<br />
+一杯敬故乡 一杯敬远方<br />
+守着我的善良 催着我成长<br />
+所以南北的路从此不再漫长<br />
+灵魂不再无处安放<br />
+一杯敬明天 一杯敬过往<br />
+支撑我的身体 厚重了肩膀<br />
+虽然从不相信所谓山高水长<br />
+人生苦短何必念念不忘<br />
+一杯敬自由 一杯敬死亡<br />
+宽恕我的平凡 驱散了迷惘<br />
+好吧天亮之后总是潦草离场<br />
+清醒的人最荒唐<br />
+好吧天亮之后总是潦草离场<br />
+清醒的人最荒唐
+    </blockquote>
+    <br /><br />
+    好了就这样吧。一些可能引起不适的内容就不放了。如果你能看到这里，那么非常感谢你。有兴趣的话加个微信聊聊吧。
+    <br />
+    <p style="text-align: right;">2018.04.06 17:40<br />wfly1998</p>
+</div>
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- Duoshuo hacking -->
+<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = document.getElementById('dsUser').value;
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}

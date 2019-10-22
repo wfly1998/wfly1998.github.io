@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html><head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+<title>图灵电脑协会</title>
+
+<link rel="stylesheet" href="css/swiper.min.css" />
+<style>
+html, body {height: 100%;}
+body {margin: 0; font-size: 30px; color: white;} 
+@media screen and (min-aspect-ratio: 1/1)
+{
+	#logo {max-width: 50%;}
+	.block {width: 30%!important; margin: 10px 5%!important; padding: 10px 5%!important;}
+}
+@keyframes slide {0% {transform: translate(0, 5px);} 100% {transform: translate(0, -5px);}}
+.anim {animation: slide 1s ease-in-out infinite alternate none;}
+.hidden {color: black; position: absolute; z-index: -1; left: 0; right: 0; text-align: center;}
+.smaller {font-size: 20px;}
+.bigger {font-size: 40px; font-weight: bold;}
+.swiper-container {width: 100%; height: 100%; text-align: center;}
+.swiper-slide {position: relative;}
+.swiper-slide > div {position: absolute; top: 50%; width: 100%;}
+.swiper-slide > .center {transform: translate(0, -50%);}
+#logo {width: 80%;} 
+#qrcode {border: solid 5px white;}
+#page1 {background-color: #5af;}
+#page2 {background-color: #b8f1cc;}
+#page3 {background-color: #f1f1b8;}
+#page4 {background-color: #f1b8e4;}
+#page5 {background-color: #dcff93;}
+#page6 {background-color: #ff9b6a;}
+#page7 {background-color: #e7dac9; color: black;}
+.blocks {margin: 0 10%; width: 80%!important;}
+.block {float: left; width: 60%; margin: 10px 10%; padding: 10px 10%; background-color: rgba(0, 0, 0, 0.1);}
+</style>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/typeit.min.js"></script>
+</head><body>
+<p class="hidden">这里什么也没有，真的<br />不要再往下拉了<br /><br /><br />...<br /><span class="smaller">还是被你发现了呀<br />偷偷告诉你哦<br />这网页作者超帅的</span></p>
+<div class="swiper-container">
+<div class="swiper-wrapper">
+
+<div id="page1" class="swiper-slide">
+<div class="center">
+	<img src="img/logo.png" id="logo" />
+	<p>济南大学图灵电脑协会</p>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="40px" height="20px" version="1.1" class="anim" style="position: absolute; bottom: 20px; margin-left: -20px;">
+	<line x1="5" y1="5" x2="20" y2="15" style="stroke: white; stroke-width: 4; stroke-linecap: round;" />
+	<line x1="20" y1="15" x2="35" y2="5" style="stroke: white; stroke-width: 4; stroke-linecap: round;" />
+</svg>
+</div>
+
+<div id="page2" class="swiper-slide">
+<div id="type1" class="center">
+	作为一个
+	<p><span class="bigger">高端</span>的<span class="bigger">科创</span>社团</p>
+	<p>我们能给你什么</p>
+	<p><span class="bigger">?</span></p>
+</div>
+</div>
+
+<div id="page3" class="swiper-slide">
+<div id="blocks1" class="center blocks">
+	<p class="block">丰富的知识</p>
+	<p class="block">充足的资源</p>
+	<p class="block">优秀的学姐</p>
+	<p class="block">优秀的学长</p>
+	<p class="block">这些就够了</p>
+	<p class="block">你还想要啥</p>
+</div>
+</div>
+
+<div id="page4" class="swiper-slide">
+<div id="type2" class="center">
+	那么在这里
+	<p><span class="bigger">你能学到什么</span></p>
+	<p><span class="bigger">?</span></p>
+</div>
+</div>
+
+<div id="page5" class="swiper-slide">
+<div id="blocks2" class="center blocks">
+	<p class="block">软件开发</p>
+	<p class="block">数据挖掘</p>
+	<p class="block">网页制作</p>
+	<p class="block">硬件拆装</p>
+	<p class="block">单片机开发</p>
+	<p class="block">自媒体运营</p>
+</div>
+</div>
+
+<div id="page6" class="swiper-slide">
+<div class="center">
+	<p>我们欢迎</p>
+	<p>有热情有理想</p>
+	<p>爱技术爱学习</p>
+	<p>的<span class="bigger">你</span>加入我们</p>
+	<p>这个世界<span class="bigger">需要英雄</span></p>
+</div>
+</div>
+
+<div id="page7" class="swiper-slide">
+<div class="center">
+	<p><span class="bigger">&nbsp;&nbsp;你们来不来?</span></p>
+	<img id="qrcode" src="img/qrcode.png" />
+	<p>↑<br />长按扫码了解详情</p>
+</div>
+<p style="position: absolute; bottom: 0; font-size: 14px; margin: 0; text-align: center; width: 100%;">&copy; 2018 Turingca.com All Rights Reserved.</p>
+</div>
+
+</div>
+<div class="swiper-pagination"></div>
+</div>
+
+<script>
+tp1 = $('#type1'); tp2 = $('#type2'); bl1 = $('#blocks1'); bl2 = $('#blocks2');
+tp1.hide(); tp2.hide(); bl1.hide(); bl2.hide();
+
+new TypeIt('#page1 p', {speed: 150});
+
+var swiper = new Swiper('.swiper-container', {
+	direction: 'vertical',
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	on: {
+		slideChangeTransitionEnd: function(){
+			if (this.activeIndex == 1 && tp1.css('display') == 'none') {
+				tp1.show();
+				new TypeIt('#type1', {
+					speed: 100,
+					breakLines: false,
+					autoStart: false
+				});
+			}
+			else if (this.activeIndex == 2 && bl1.css('display') == 'none') bl1.slideDown(1000);
+			else if (this.activeIndex == 3 && tp2.css('display') == 'none') {
+				tp2.show();
+				new TypeIt('#type2', {
+					speed: 100,
+					breakLines: false,
+					autoStart: false
+				});
+			}
+			else if (this.activeIndex == 4 && bl2.css('display') == 'none') bl2.slideDown(1000);
+		},
+	},
+});
+
+		
+</script>
+
+</body></html>
