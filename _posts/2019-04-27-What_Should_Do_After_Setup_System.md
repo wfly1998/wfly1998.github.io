@@ -72,11 +72,20 @@ tags:
    * `:PlugInstall`
    * 需要补充的一点就是，我现在发现`YouCompleteMe`不管用什么插件管理器安装都很慢，所以现在我选择用`pacman`安装：
    * `sudo pacman -S vim-youcompleteme-git`，完事再整一个`.ycm_extra_conf.py`配上
+   
+   另外，我感觉直接装的`vim`不能读写剪贴板，有点不太够用。在`Debian`系可以装一个`vim-gtk`什么的就能解决，但是`Arch`系最佳解决方案是用`neovim`。所以在这里也提供一个`vim`到`nvim`的迁移方案（其实就是共用配置文件。
+   
+   ```sh
+   mkdir -p ~/.local/share/nvim/site
+   ln -s ~/.local/share/nvim/site ~/.vim 
+   ln -s .config/nvim/init.vim .vimrc
+   ```
 
 7. 再改改系统设置就差不多了吧
 
-   * `~/.i3/config`
+   * `.i3/config`
    * `.Xresources`
+   * `.config/mimeapps.list`
 
 ## Debian系
 
@@ -120,3 +129,5 @@ tags:
 装系统的时候发现了这篇文章的一些缺陷，还有一些已经废弃的软件和我以及改变的习惯，所以把文章改了一下。
 
 也没什么好说的了吧，就酱。
+
+对了再补充一下，在系统中装完chrome后，chrome老是提示不是默认浏览器，点了也没用。这时候需要改`.config/mimeapps.list`，这个不太好解释，我都是装一个kde，在kde的设置里改mime，改完再把kde卸掉。我觉得有必要在`my_config`仓库里也把这个文件备份一下了。到时候直接复制粘贴就好啦～
