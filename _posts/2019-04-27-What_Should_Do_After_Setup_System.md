@@ -15,49 +15,68 @@ tags:
 ## Arch系
 
 0. 装系统
+   
+   做系统盘的话，在Windows下可以用`Win32DiskImager`，Linux下直接上`dd`。
 
 1. 用`vim.tiny`或者`vi`改源
-   * 针对Manjaro系统
+
+   * **针对Manjaro系统**
    * 在`/etc/pacman.d/mirrorlist`最前面加上`Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch`
    * 修改`/etc/pacman.conf`，加上`[archlinuxcn]\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch`
    * `sudo pacman -Syy`，`sudo pacman -S archlinuxcn-keyring`，完成。
+   * 完事了可以顺手`sudo pacman -Syu`一下（
    
 2. 装必备软件，以下列举几个
-   * `vim cmake make git gcc clang`
-   * `yaourt`
-   * `google-chrome deepin-wine-tim wps-office ttf-wps-fonts typora zotero`
-   * `libsodium python-m2crypto electron-ssr`
-   * `anaconda`
+
+   * `vim cmake gcc clang unzip`
+   * `yay rofi`
+   * `google-chrome`
    * `fcitx-im fcitx-configtool fcitx-sogoupinyin`
+   * `deepin-wine-tim wps-office ttf-wps-fonts typora zotero`
+   
+   需要注意的是，安装完`fcitx`后，需要在`.xprofile`中添加：
+   
+   ```
+   export XMODIFIERS="@im=fcitx"
+   export GTK_IM_MODULE="fcitx"
+   export QT_IM_MODULE="fcitx"
+   ```
    
 3. 装`zsh`，以及`oh-my-zsh`
    
    * `sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
    
 4. 修改目录为英文
+
    * `sudo pacman -S xdg-user-dirs-gtk`
-   * `export LANG=en_US`
+   * `export LANG=en_US.UTF-8`
    * `xdg-user-dirs-gtk-update`
    * 点击Update New Names，注销，Keep Old Names，完成
+   * `sudo pacman -R xdg-user-dirs-gtk`（以后就用不到了，卸掉）
    
-5. 交换`CapsLock`和`ESC`!!!!!!!
+5. 交换`CapsLock`和`ESC`（vim党的刚需）
 
-   * 创建`~/.Xmodmap`文件，内容：
+   创建`~/.Xmodmap`文件，内容：
 
-   * ```
-     remove Lock = Caps_Lock
-     keysym Escape = Caps_Lock
-     keysym Caps_Lock = Escape
-     add Lock = Caps_Lock
+   ```
+   remove Lock = Caps_Lock
+   keysym Escape = Caps_Lock
+   keysym Caps_Lock = Escape
+   add Lock = Caps_Lock
      ```
 
 6. 配`.vimrc`!!!!!!
 
-   * 从`Github`clone一份`Vundle.vim`：`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-   * `:PluginInstall`
-   * 编译YCM，改配置文件
+   * 从`Github`clone一份`vim-plug`：`curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+   * 改配置文件，安装
+   * `:PlugInstall`
+   * 需要补充的一点就是，我现在发现`YouCompleteMe`不管用什么插件管理器安装都很慢，所以现在我选择用`pacman`安装：
+   * `sudo pacman -S vim-youcompleteme-git`，完事再整一个`.ycm_extra_conf.py`配上
 
 7. 再改改系统设置就差不多了吧
+
+   * `~/.i3/config`
+   * `.Xresources`
 
 ## Debian系
 
@@ -93,3 +112,11 @@ tags:
 哦对我还忘了说，刚才还顺便把我的kde删掉了，干掉了500M，现在基本只用i3。i3启动快，功能可以满足我的需求，而且可以完全脱离鼠标使用，我还要这个启动如此慢的kde有何用
 
 就这样吧～
+
+## 2020-02-06
+
+买了台新电脑（迷你主机），打算开学后在宿舍用。
+
+装系统的时候发现了这篇文章的一些缺陷，还有一些已经废弃的软件和我以及改变的习惯，所以把文章改了一下。
+
+也没什么好说的了吧，就酱。
