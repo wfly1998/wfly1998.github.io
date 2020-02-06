@@ -76,9 +76,8 @@ tags:
    另外，我感觉直接装的`vim`不能读写剪贴板，有点不太够用。在`Debian`系可以装一个`vim-gtk`什么的就能解决，但是`Arch`系最佳解决方案是用`neovim`。所以在这里也提供一个`vim`到`nvim`的迁移方案（其实就是共用配置文件。
    
    ```sh
-   mkdir -p ~/.local/share/nvim/site
-   ln -s ~/.local/share/nvim/site ~/.vim 
-   ln -s .config/nvim/init.vim .vimrc
+   ln -s ~/.vim ~/.config/nvim
+   ln -s ~/.vimrc ~/.config/nvim/init.vim
    ```
 
 7. 再改改系统设置就差不多了吧
