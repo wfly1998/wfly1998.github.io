@@ -88,7 +88,11 @@ tags:
 
 ## Debian系
 
-以后再补充吧，Arch真香。
+20201204 帮朋友装 Ubuntu，记录一下
+
+1. 进 软件与更新，选一个合适的源，然后 `sudo apt update`，`sudo apt upgrade`
+
+2. 好像剩下的都差不多...修改目录为英文的时候要用 `export LANG=en_US`，不能加 `UTF-8`
 
 ## 2019-10-29 补充：Arch系统的清理
 
